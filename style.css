@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  border: 1px solid black;
+
+  max-width: 500px;
+  height: 600px;
+  padding: 2rem;
+}
+
+.field {
+  position: relative;
+  margin: 4rem auto 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: .25rem .1rem;
+  /* valeur padding top à ajouter à label translateY, d'où le calc */
+}
+
+.label {
+  display: block;
+  position: absolute;
+  top: calc(0px + .25rem);
+  left: calc(0px + .1rem);
+  pointer-events: none;
+  transform-origin: 0%;
+  transition: transform 400ms;
+}
+
+.field:focus-within .label,
+.input:not(:placeholder-shown)+.label {
+  padding: 0 .2rem;
+  background-color: white;
+  transform: scale(0.8) translateY(-1rem)
+}
+
+.showPassword {
+  position: absolute;
+}
+
+.strength {
+  display: flex;
+  height: 20px;
+  width: 100%;
+}
+
+.bar {
+  background-color: lightsalmon;
+  margin-right: 5px;
+  height: 100%;
+  width: 25%;
+  box-shadow: inset 0px 20px #1f1f1f;
+}
+
+.bar-show {
+  box-shadow: none;
+}
+
+.field::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #d16dff;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  transition: transform 500ms ease;
+  bottom: 0px;
+}
+
+.field:focus-within::after {
+  transform: scaleX(1)
+}
+
+input[type="submit"]:focus {
+  /* /!\ */
+  background: #1bfaad;
+  color: #111;
+}

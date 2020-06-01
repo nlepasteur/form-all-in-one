@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>login form</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <main>
+
+    <form>
+
+      <div class="field">
+        <input type="text" name="username" class="input" aria-describedly="usernameHelp" placeholder=" " required />
+        <label for="username" class="label">Username</label>
+      </div>
+      <!-- <small id="usernameHelp" class="form-text text-muted">Username must be longer than 2 characters and shorter than
+        30. Username can only contain
+        alphanumeric characters and under_scores</small> -->
+
+      <div class="field">
+        <input type="password" name="password" class="input passwordInput" aria-describedby="passwordHelp"
+          placeholder=" " required />
+        <label for="password" class="label">Password</label>
+        <span class="showPassword">
+          SHOW PASSWORD
+        </span>
+      </div>
+      <!-- <small id="passwordHelp" class="form-text text-muted">Password must be longer than 10 characters.</small> -->
+
+      <div class="field">
+        <input type="password" name="confirmPassword" class="input" aria-describedby="confirmPasswordhelp"
+          placeholder=" " required />
+        <label for="confirmPassword" class="label">Confirm Password</label>
+      </div>
+      <!-- <small id="confirmPasswordHelp" class="form-text text-muted">Please confirm your password.</small> -->
+
+      <div class="strength">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+        <span class="bar bar-4"></span>
+        <!-- class:bar-show={strength> 3} -->
+      </div>
+
+      <ul>
+        <li> must be at least 5 characters</li>
+        <li> must contain a capital letters</li>
+        <li> must contain a number</li>
+        <li> must contain one of $&+,:;=?@#</li>
+      </ul>
+
+
+
+      <input type="submit">Signup</input>
+
+
+    </form>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
